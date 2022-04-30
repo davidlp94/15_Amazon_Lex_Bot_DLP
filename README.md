@@ -1,4 +1,4 @@
-# 15_Amazon_Lex_Bot_DLP
+# Amazon Lex Retirement Planner Bot
 ## Introduction
 An Amazon Lex bot designed to advise retirement investment portfolios using Amazon Lex and Lambda. A video sample of this bot is located in Amazon_Lex.mp4. In addition to the bot, (4) different test scenarios are available to view using Amazon Lambda in Amazon_Lambda.mp4.
 
