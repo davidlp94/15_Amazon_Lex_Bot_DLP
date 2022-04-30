@@ -1,6 +1,7 @@
 ### Required Libraries ###
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from botocore.vendored import requests
 
 ### Functionality Helper Functions ###
 def parse_int(n):
@@ -124,7 +125,20 @@ def recommend_portfolio(intent_request):
     risk_level = get_slots(intent_request)["riskLevel"]
     source = intent_request["invocationSource"]
 
-    # YOUR CODE GOES HERE!
+    recommendation = ""
+    if age<="0" or age>="65":
+        recommendation = "Please provide a valid age between the ages of 1 and 65"
+    elif investment_amount < "5000":
+        recommendation = "Please provide an investment amount equal to or greater than $5,000"
+    elif risk_level == "None":
+        recommendation = "100% bonds (AGG), 0% equities (SPY)"
+    elif risk_level == "Low":
+        recommendation = "60% bonds (AGG), 40% equities (SPY)"
+    elif risk_level == "Medium":
+        recommendation = "40% bonds (AGG), 60% equities (SPY)"
+    elif risk_level == "High":
+        recommendation = "20% bonds (AGG), 80% equities (SPY)"
+    return recommendation
 
 
 ### Intents Dispatcher ###
